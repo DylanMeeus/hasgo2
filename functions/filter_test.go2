@@ -5,19 +5,49 @@ import "testing"
 
 // TestFilter
 func TestFilter(t *testing.T) {
-    ints := []int{1,2,3,4}
-    f := Filter(ints, func(i int) bool { return i % 2  == 0 })
-    expected := []int{2,4}
-    if !intsEqual(f, expected) {
-        t.Fatalf("expected: %v but got %v", expected, f)
+    t.Log("Testing with ints")
+    {
+        ints := []int{1,2,3,4}
+        f := Filter(ints, func(i int) bool { return i % 2  == 0 })
+        expected := []int{2,4}
+        if !intsEqualsOrdered(expected, f) {
+            t.Fatalf("expected: %v but got %v", expected, f)
+        }
+        t.Log("Ints work!!")
     }
-    t.Log("Success!")
+
+    t.Log("Testing with strings") 
+    {
+        names := []string{"Ana", "Richard", "Elza"}
+        smallNames := func(s string) bool { return len(s) < 4 }
+        sm := Filter(names, smallNames)
+        expected := []string{"Ana"}
+        if !stringsEqualsOrdered(expected, sm) {
+            t.Fatalf("expected: %v but got %v", expected, sm)
+        }
+        t.Log("Strings work too :-)")
+    }
 }
 
-// intsEqual ensures the ints are in the right order 
-func intsEqual(is1, is2 []int) bool {
-    for i, j := range is1  {
-        if j != is2[i] {
+
+func intsEqualsOrdered(is1, is2 []int) bool {
+    if len(is1) != len(is2) {
+        return false
+    }
+    for i,v := range is1 {
+        if v != is2[i] {
+            return false
+        }
+    }
+    return true
+}
+
+func stringsEqualsOrdered(is1, is2 []string) bool {
+    if len(is1) != len(is2) {
+        return false
+    }
+    for i,v := range is1 {
+        if v != is2[i] {
             return false
         }
     }
