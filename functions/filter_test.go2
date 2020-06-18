@@ -1,0 +1,25 @@
+package functions
+
+
+import "testing"
+
+// TestFilter
+func TestFilter(t *testing.T) {
+    ints := []int{1,2,3,4}
+    f := Filter(ints, func(i int) bool { return i % 2  == 0 })
+    expected := []int{2,4}
+    if !intsEqual(f, expected) {
+        t.Fatalf("expected: %v but got %v", expected, f)
+    }
+    t.Log("Success!")
+}
+
+// intsEqual ensures the ints are in the right order 
+func intsEqual(is1, is2 []int) bool {
+    for i, j := range is1  {
+        if j != is2[i] {
+            return false
+        }
+    }
+    return true
+}
