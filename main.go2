@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+        "github.com/DylanMeeus/hasgo2/functions"
 )
 
 func Filter(type T)(ts []T, f func(T) bool) (out []T) {
@@ -17,6 +18,6 @@ func Filter(type T)(ts []T, f func(T) bool) (out []T) {
 func main() {
 	fmt.Println("hello world")
 	is := []int{1, 2, 3, 4}
-	f := Filter(is, func(i int) bool { return i%2 == 0 })
+	f := functions.Filter(is, func(i int) bool { return i%2 == 0 })
         fmt.Println(f)
 }
