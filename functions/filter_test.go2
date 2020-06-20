@@ -9,8 +9,8 @@ func TestFilter(t *testing.T) {
     {
         ints := []int{1,2,3,4}
         f := Filter(ints, func(i int) bool { return i % 2  == 0 })
-        expected := []int{2,4}
-        if !intsEqualsOrdered(expected, f) {
+        expected := newCmpInts([]int{2,4})
+        if !equalsOrdered(expected, newCmpInts(f)) {
             t.Fatalf("expected: %v but got %v", expected, f)
         }
         t.Log("Ints work!!")

@@ -9,6 +9,15 @@ func (c cmpInt) Equals(o cmpInt) bool {
     return int(c) == int(o)
 }
 
+func newCmpInts(is []int) ([]cmpInt) {
+    cmpints := make([]cmpInt, len(is)) 
+    for i,v := range is {
+        cmpints[i] = cmpInt(v)
+    }
+    return cmpints
+}
+
+
 // cmpString is a string wrapper that provides a .equals function
 type cmpString string
 func (c cmpString) Equals(o cmpString) bool {
