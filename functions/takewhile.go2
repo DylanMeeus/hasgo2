@@ -1,0 +1,12 @@
+package functions
+
+// TakeWhile returns all elements of ts until the predicate f fails
+func TakeWhile(type T) (ts []T, f func(T) bool) (out []T) {
+    for _,t := range ts {
+        if !f(t) {
+            return 
+        } 
+        out = append(out, t)
+    }
+    return
+}
