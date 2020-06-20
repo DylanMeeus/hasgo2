@@ -1,0 +1,19 @@
+package functions
+
+import (
+    "testing"
+)
+
+func TestDropWhile(t *testing.T) {
+    t.Log("Testing with ints")
+    {
+        ints := []int{1,2,3,4}
+        result := DropWhile(ints, func(i int) bool { return i < 3 })
+        expected := []int{3, 4}
+        if !intsEqualsOrdered(expected, result) {
+            t.Fatalf("expected: %v but got %v", expected, result)
+        }
+        t.Log("Ints work!!")
+
+    }
+}

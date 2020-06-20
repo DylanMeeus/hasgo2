@@ -1,0 +1,13 @@
+package functions
+
+// DropWhile returns the remainder of [ts] once the predicate [f] was false
+func DropWhile(type T) (ts []T, f func(T)bool) (out []T) {
+    for i,t := range ts {
+        if f(t) {
+            continue
+        } 
+        // once the predicate is false, return the remained
+        return ts[i:len(ts)]
+    }
+    return 
+}
