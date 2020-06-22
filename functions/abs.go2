@@ -1,0 +1,13 @@
+package functions
+
+
+func Abs(type T SignedNumber) (ts []T) ([]T) {
+    out := make([]T, len(ts))
+    for i,t := range ts {
+        if t < 0 {
+            t *= -1
+        }
+        out[i] = t
+    }
+    return out
+}

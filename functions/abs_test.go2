@@ -1,0 +1,16 @@
+package functions
+
+import "testing"
+
+func TestAbs(t *testing.T) {
+    t.Log("Testing with ints")
+    {
+        ints := []int{-1,2,-3,4}
+        result := Abs(ints)
+        expected := []int{1,2,3,4}
+        if !intsEqualsOrdered(result, expected) {
+            t.Fatalf("expected: %v but got %v", expected, result)
+        }
+        t.Log("Ints work!!")
+    }
+}

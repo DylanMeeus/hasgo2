@@ -29,27 +29,3 @@ func TestFilter(t *testing.T) {
     }
 }
 
-
-func intsEqualsOrdered(is1, is2 []int) bool {
-    if len(is1) != len(is2) {
-        return false
-    }
-    for i,v := range is1 {
-        if v != is2[i] {
-            return false
-        }
-    }
-    return true
-}
-
-func stringsEqualsOrdered(is1, is2 []string) bool {
-    if len(is1) != len(is2) {
-        return false
-    }
-    for i,v := range is1 {
-        if v != is2[i] {
-            return false
-        }
-    }
-    return true
-}
