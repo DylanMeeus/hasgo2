@@ -1,0 +1,9 @@
+package functions
+
+import "testing"
+
+// TestChaining
+func TestChaining(t *testing.T) {
+    // TODO: can't implement yet, compiler can't handle testing functions in more than one file.
+
+}

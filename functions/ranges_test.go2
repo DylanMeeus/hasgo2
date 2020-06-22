@@ -1,0 +1,12 @@
+package functions
+
+import "testing" 
+
+func TestRanges(t *testing.T) {
+    ir := Range(-2,2)
+    expected := []int{-2,-1,0,1,2}
+    if !intsEqualsOrdered(ir, expected) {
+        t.Fatalf("expected %v but got %v", expected, ir) 
+    }
+
+}
