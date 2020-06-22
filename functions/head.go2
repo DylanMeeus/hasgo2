@@ -1,0 +1,9 @@
+package functions
+
+// Returns the head (first) element of the list
+func Head(type T)(ts []T) (out T) {
+    if len(ts) == 0 {
+        return 
+    }
+    return ts[0]
+}
