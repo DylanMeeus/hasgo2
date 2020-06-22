@@ -1,0 +1,18 @@
+package functions
+
+import (
+    "testing"
+)
+
+func TestSum(t *testing.T) {
+    t.Log("Testing with ints")
+    {
+        ints := []int{1,2,3,4}
+        result := Sum(ints)
+        expected := 1 + 2 + 3 + 4 
+        if expected != result {
+            t.Fatalf("expected: %v but got %v", expected, result)
+        }
+        t.Log("Ints work!!")
+    }
+}

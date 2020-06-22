@@ -1,0 +1,13 @@
+package functions 
+
+type Number interface {
+    type int, uint, int64, uint64
+}
+
+
+func Sum(type T Number) (ts []T) (out T) {
+    for _,t := range ts {
+        out += t  
+    }
+    return 
+}
