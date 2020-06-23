@@ -4,6 +4,9 @@ import "testing"
 
 // TestChaining
 func TestChaining(t *testing.T) {
-    // TODO: can't implement yet, compiler can't handle testing functions in more than one file.
-
+    result := Sum(Filter(Abs(Range(-10,10)), func(i int) bool { return i % 2 == 0 }))
+    expected := 60 
+    if result != 60 {
+        t.Fatalf("expected %v but got %v", expected, result)
+    }
 }
