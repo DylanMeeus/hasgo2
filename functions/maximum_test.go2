@@ -3,7 +3,7 @@ package functions
 import "testing"
 
 var (
-    avgTests = []struct {
+    maximumTests = []struct {
         in []int
         out int
     }{
@@ -12,16 +12,20 @@ var (
             0,
         },
         {
-            []int{1,2,3},
-            2,
+            []int{20,10},
+            20,
+        },
+        {
+            []int{-1,-2,-3,-4},
+            -1,
         },
     }
 )
 
-func TestAverage(t *testing.T) {
-    for _,test := range avgTests {
+func TestMaximum(t *testing.T) {
+    for _,test := range maximumTests {
         t.Run("", func(t *testing.T) {
-            res := Average(test.in)
+            res := Maximum(test.in)
             if int(res) != test.out {
                 t.Errorf("expected %v but got %v", test.out, res)
             }

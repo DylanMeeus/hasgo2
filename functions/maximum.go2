@@ -1,0 +1,16 @@
+package functions
+
+// Maximum returns the highest number in the slice
+// Works for any number type
+func Maximum(type T Number) (ts []T) T {
+    if len(ts) == 0 {
+        return 0 
+    }
+    max := ts[0]
+    for _,t := range ts[1:] {
+        if t > max {
+            max = t
+        }
+    }
+    return max
+}
