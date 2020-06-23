@@ -1,0 +1,13 @@
+package functions
+
+// Average returns the average of all elements in the slice
+// Works on any number type.
+func Average(type T Number) (ts []T) (out float64) {
+    if len(ts) == 0 {
+        return 
+    }
+    for _,t := range ts {
+        out += float64(t)
+    }
+    return out / float64(len(ts))
+}
