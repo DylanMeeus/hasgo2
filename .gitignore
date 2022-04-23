@@ -1,7 +1,3 @@
-# yes, this is odd for a go repository.. But I only want go2 files for now..
-*.go 
-
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
