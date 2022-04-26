@@ -11,6 +11,14 @@ import (
 type VectorTest[T any] struct {
     input []T
     abs []T
+    tail []T
+}
+
+
+type ScalarTest[T any] struct {
+    input []T
+    min T
+    max T
 }
 
 var (
@@ -18,6 +26,7 @@ var (
 		{
 			input: []int{-1, 2, -3, 4},
 			abs: []int{1, 2, 3, 4},
+			tail: []int{2,-3,4},
 		},
 	}
 
@@ -47,4 +56,16 @@ func Test_Abs(t *testing.T) {
 			}
 		})
 	}
+}
+
+
+func TestTail(t *testing.T) {
+    for _,test := range intVectorTests {
+	t.Run("", func(t *testing.T) {
+	    res := pkg.Tail(test.input)
+	    if !reflect.DeepEqual(res, test.tail) {
+		t.Errorf("expected %v but got %v\n", test.tail, res)
+	    }
+	})
+    }
 }
