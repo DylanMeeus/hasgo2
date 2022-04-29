@@ -33,7 +33,7 @@ var (
     }
 )
 
-func Test_JustContainsValue(t *testing.T) {
+func Test_Maybe(t *testing.T) {
     for _, test := range intMaybeTests {
 	t.Run("", func(t *testing.T) {
 	    if test.present != test.m.Present {
