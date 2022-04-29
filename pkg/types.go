@@ -9,5 +9,6 @@ type UnsignedNumber interface {
 }
 
 type ComplexNumber interface {
-    complex64 | complex128
+    ~complex64 | ~complex128
 }
+

@@ -40,3 +40,24 @@ func Max[T SignedNumber | UnsignedNumber] (ts []T) T {
     }
     return max
 }
+
+
+func Tail[T any] (ts []T) []T {
+    if len(ts) <= 1 {
+	return make([]T, 0)
+    }
+
+
+    out := make([]T, len(ts)-1)
+    for i,v := range ts[1:] {
+	out[i] = v
+    }
+    return out
+}
+
+func Head[T any] (ts []T) Maybe[T] {
+    if len(ts) == 0 {
+	return Nothing[T]()
+    }
+    return Just[T](ts[0])
+}

@@ -1,4 +1,4 @@
-package testing
+package tests
 
 import (
 	"reflect"
@@ -59,7 +59,7 @@ func Test_Abs(t *testing.T) {
 }
 
 
-func TestTail(t *testing.T) {
+func Test_Tail(t *testing.T) {
     for _,test := range intVectorTests {
 	t.Run("", func(t *testing.T) {
 	    res := pkg.Tail(test.input)
