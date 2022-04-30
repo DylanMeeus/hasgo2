@@ -47,21 +47,6 @@ var (
 )
 
 func Test_Maybe(t *testing.T) {
-
-
-    /*
-
-    testRunner := func[T any] (test maybeTest[T], t *testing.T) {
-	    if test.present != test.m.Present {
-		t.Errorf("expected present to be %v but got %v\n", test.present, test.m.Present)
-	    }
-	    if test.value!= test.m.Value {
-		t.Errorf("expected value to be %v but got %v\n", test.value, test.m.Value)
-	    }
-	}
-
-	*/
-
     for _, test := range intMaybeTests {
 	t.Run("", func(t *testing.T) {
 	    runTest(test, t)
