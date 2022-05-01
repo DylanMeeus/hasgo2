@@ -55,9 +55,24 @@ func Tail[T any] (ts []T) []T {
     return out
 }
 
+// Head :: [a] -> a
 func Head[T any] (ts []T) Maybe[T] {
     if len(ts) == 0 {
 	return Nothing[T]()
     }
     return Just[T](ts[0])
+}
+
+
+func Reverse[T any](ts []T) []T {
+    if len(ts) == 0 {
+	return ts
+    }
+
+    out := make([]T, len(ts))
+
+    for i, v := range ts {
+	out[len(ts) - 1 - i] = v
+    }
+    return out
 }
