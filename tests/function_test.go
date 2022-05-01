@@ -21,6 +21,7 @@ type ScalarTest[T any] struct {
 type anyListManipulationTest[T any] struct {
     input []T
     tail []T
+    head pkg.Maybe[T]
 }
 
 type mathTest[T pkg.SignedNumber | pkg.UnsignedNumber] struct {
@@ -51,6 +52,7 @@ var (
 	    {
 			input: []int{-1, 2, -3, 4},
 			tail: []int{2,-3,4},
+			head: pkg.Just(-1),
 	    },
 	}
 )
@@ -78,16 +80,21 @@ func Test_Abs(t *testing.T) {
 
 func Test_AnyListManipulation(t *testing.T) {
     for _,test := range intListManipulationTests {
+	// test tail
 	t.Run("", func(t *testing.T) {
 	    res := pkg.Tail(test.input)
 	    if !reflect.DeepEqual(res, test.tail) {
 		t.Errorf("expected %v but got %v\n", test.tail, res)
 	    }
 	})
+
+	// test head
+	t.Run("", func(t *testing.T) {
+	    res := pkg.Head(test.input)
+	    if res != test.head {
+		t.Errorf("expected %v but got %v\n", test.tail, res)
+	    }
+	})
     }
 }
 
-
-func Test_Head(t *testing.T) {
-    
-}
